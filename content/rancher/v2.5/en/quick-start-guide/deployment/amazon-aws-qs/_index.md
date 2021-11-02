@@ -37,9 +37,9 @@ Suggestions include:
     - `prefix` - Prefix for all created resources
     - `instance_type` - EC2 instance size used, minimum is `t3a.medium` but `t3a.large` or `t3a.xlarge` could be used if within budget
 
-1. Run `terraform init`.
+1. Run `terraform init`. This command prepares the working directory to use with Terraform 
 
-1. To initiate the creation of the environment, run `terraform apply --auto-approve`. Then wait for output similar to the following:
+1. To initiate the creation of the environment, run `terraform apply --auto-approve`. Then wait for output similar to the following: 
 
     ```
     Apply complete! Resources: 16 added, 0 changed, 0 destroyed.
@@ -50,6 +50,7 @@ Suggestions include:
     rancher_server_url = https://rancher.xx.xx.xx.xx.sslip.io
     workload_node_ip = yy.yy.yy.yy
     ```
+(Note: It is general practice to separate the steps of creation into `terraform plan -out` and `terraform apply`. This provides insight into changes in the AWS infrastructure before they are made.)  
 
 1. Paste the `rancher_server_url` from the output above into the browser. Log in when prompted (default username is `admin`, use the password set in `rancher_server_admin_password`).
 
